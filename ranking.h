@@ -17,8 +17,8 @@ public:
 	PostingList* tf_idfRanking();                       // обычное tf-idf ранжирование
 	PostingList* VectorRancking(vector<string>&, Statistics*, PostingList*); //векторное ранжирование
 	PostingList* ModelRancking();                       // ранжирование с использованием языковых моделей 
-    PostingList* ExtendedTo200(PostingList*);          // дополнить кол-во результатов поиска до 200
-    PostingList* Return200(unsigned long, PostingList*, vector <pair <double, unsigned long> >);//вернуть результат чернового ранжирования
+    PostingList* ExtendedTo200(Statistics*, PostingList*);          // дополнить кол-во результатов поиска до 200
+    PostingList* Return200(unsigned long, Statistics*, PostingList*, vector <pair <double, unsigned long> >);//вернуть результат чернового ранжирования
     pair<double, unsigned long>  GetDocIdRank(Statistics*, PostingList*,  unsigned long, unsigned long, unsigned long, unsigned long, double, vector < pair < double, unsigned long > >); // возвращает вес док-та для текущего запроса
     double bm25_weight(unsigned long, unsigned long, unsigned long, int, int);
     double idf(unsigned long, unsigned long);
